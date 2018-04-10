@@ -1,0 +1,213 @@
+
+<html>
+<head>
+<title>This is worth 100%</title>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+
+<script type="text/javascript" src="https://static.codehs.com/gulp/9bcce688d809367ea5dce03943fa5521ed6f217e/chs-js-lib/chs.js"></script>
+
+
+<style>
+canvas {
+    border: 1px solid black;
+    display: inline-block;
+    vertical-align: center;
+}
+    
+    body{
+        
+        background-color: indianred;
+        
+        
+    }
+
+
+</style>
+
+</head>
+
+<body>
+    
+<h1 style = "text-align: center; color:blue; font-family: impact; font-size:50px">Shulman & Strook inc.</h1>
+<h2 style = "text-align: center; color:blue; font-family: impact; font-size:40px">Avir Lavir.</h2>
+
+
+<div align="center">
+<canvas
+width="400"
+height="500"
+class="codehs-editor-canvas"></canvas>
+</div>
+
+<script>
+window.onload = function() {
+
+    var chim1 = new Rectangle(10,100);
+var chim2 = new Rectangle(10,100);
+var chim3 = new Rectangle(45,30);
+var hole1 = new Circle(5);
+var hole2 = new Circle(5);
+var hole3 = new Circle(5);
+var air1 = new Circle(5);
+var air2 = new Circle(5);
+var air3 = new Circle(5);
+var back = new Rectangle(500,500);
+var sun = new Circle(100);
+var house = new Rectangle(240,220);
+var door = new Rectangle(50,100); 
+var knob = new Circle(7);
+var pane = new Rectangle(50,50);
+var pane2 = new Rectangle(50,50);
+var cool = new Rectangle(30,30);
+var cool2 = new Rectangle(30,30);
+var count = 0;
+
+function build(){
+    
+    house.setPosition(80,260);
+    house.setColor("#A52A2A");
+    add(house);
+    
+    door.setPosition(170,380);
+    door.setColor(Color.black);
+    add(door);
+    
+    knob.setPosition(205,430);
+    knob.setColor(Color.white);
+    add(knob);
+    
+    pane.setPosition(255,300);
+    pane.setColor(Color.yellow);
+    add(pane);
+    
+    pane2.setPosition(100,300);
+    pane2.setColor(Color.yellow);
+    add(pane2);
+    
+    cool.setPosition(110,310);
+    cool.setColor("#A52A2A");
+    add(cool);
+    
+    cool2.setPosition(265,310);
+    cool2.setColor("#A52A2A");
+    add(cool2);
+    
+    
+}
+
+
+
+function chimney(){
+    chim1.setPosition(100,160);
+    chim1.setColor("#A52A2A");
+    add(chim1);
+    
+    chim2.setPosition(135,160);
+    chim2.setColor("#A52A2A");
+    add(chim2);
+    
+    chim3.setPosition(100,150);
+    chim3.setColor(Color.grey);
+    add(chim3);
+    
+    hole1.setPosition(110,160);
+    hole1.setColor(Color.cyan);
+    add(hole1);
+    
+    hole2.setPosition(123,168);
+    hole2.setColor(Color.cyan);
+    add(hole2);
+    
+    hole3.setPosition(136,160);
+    hole3.setColor(Color.cyan);
+    add(hole3);
+}
+
+
+function particle(){
+    
+    air1.setPosition(122,250);
+    air1.setColor(Color.black);
+    add(air1);
+    
+    
+    air2.setPosition(122,230);
+    air2.setColor(Color.black);
+    add(air2);
+    
+    air3.setPosition(122,210);
+    air3.setColor(Color.black);
+    add(air3);
+    
+}
+
+function move(e){
+    
+    if (e.keyCode == Keyboard.UP) {
+		air1.move(0, -6);
+	}
+	
+	if (e.keyCode == Keyboard.UP) {
+		air2.move(0, -6);
+	}
+	
+	if (e.keyCode == Keyboard.UP) {
+		air3.move(0, -6);
+	}
+	
+	if (e.keyCode == Keyboard.LEFT) {
+		air1.setColor(Color.blue);
+	}
+	
+	if (e.keyCode == Keyboard.LEFT) {
+		air2.setColor(Color.blue);
+	}
+	
+	if (e.keyCode == Keyboard.LEFT) {
+		air3.setColor(Color.blue);
+	}
+    
+    
+}
+
+
+
+
+
+function background(){
+    back.setPosition(0,0);
+    back.setColor(Color.cyan);
+    add(back);
+}
+
+function shine(){
+    
+    sun.setPosition(400,20);
+    sun.setColor(Color.yellow);
+    add(sun);
+    
+}
+
+
+
+function start(){
+    background();
+    build();
+    chimney();
+    shine();
+    particle();
+    keyDownMethod(move);
+    
+    
+}
+
+
+    if (typeof start === 'function') {
+        start();
+    }
+};
+</script>
+
+</body>
+</html>
